@@ -1,3 +1,0 @@
-﻿Container,Local_AS,Neighbor_IP,Remote_AS
-FRR,10,172.17.0.3,20
-Ryu,20,172.17.0.2,10
