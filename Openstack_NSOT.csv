@@ -1,0 +1,3 @@
+﻿Network,Subnet,VM_Image,VM_Count,Inter-VN (Y or N),Internet (Y or N),ICMP_Security_grp (Y or N),SSH_Security_grp (Y or N)
+GREEN,192.168.10.0/24,cirros-0.5.1-x86_64-disk,2,Y,Y,N,N
+RED,192.168.20.0/24,cirros-0.5.1-x86_64-disk,2,Y,Y,N,N
