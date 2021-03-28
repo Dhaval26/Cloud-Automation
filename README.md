@@ -84,9 +84,13 @@ The application created as part of this project is performing following automati
   
   4) Attach the configuration file while running the docker
      
-     Frrouting docker: docker run -v /home/frr.conf:/etc/frr/frr.conf -itd --privileged --name <frr_docker_name> <frr_image_file>
+     Frrouting docker:
      
-     Ryu docker: docker run -tid -v /home/ssh.py:/root/ryu/ryu/services/protocols/bgp/operator/ssh.py \
+     docker run -v /home/frr.conf:/etc/frr/frr.conf -itd --privileged --name <frr_docker_name> <frr_image_file>
+     
+     Ryu docker: 
+     
+     docker run -tid -v /home/ssh.py:/root/ryu/ryu/services/protocols/bgp/operator/ssh.py \
                             -v /home/app.py:/root/ryu/ryu/services/protocols/bgp/application.py \
                             -v /home/bgp_conf.py:/root/ryu/ryu/services/protocols/bgp/bgp_conf.py --name <ryu_docker_name> <ryu_image_file>
      
