@@ -54,7 +54,7 @@ The application created as part of this project is performing following automati
         
         SSH:  openstack security group rule create --protocol tcp --dst-port 22:22 <default_security_group_id> -f json
     
-##### Note: "-f json" option is used in most commands for easily parsing the data
+     **Note: "-f json" option is used in most commands for easily parsing the data**
      
 ### Docker BGP Automation
 
@@ -94,7 +94,7 @@ The application created as part of this project is performing following automati
                             -v /home/app.py:/root/ryu/ryu/services/protocols/bgp/application.py \
                             -v /home/bgp_conf.py:/root/ryu/ryu/services/protocols/bgp/bgp_conf.py --name <ryu_docker_name> <ryu_image_file>
      
-     Notes:
+     **Notes:**
      
      -  In Docker container, the bgpd option needs to be enabled in /etc/frr/daemons file (line#17). After that, commit the docker container and create new image and use that image while attaching thr frr.conf file to new frr docker instance. (bgpd process requires stop/start of docker container)
      
