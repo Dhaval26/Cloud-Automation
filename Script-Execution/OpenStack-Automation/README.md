@@ -1,4 +1,4 @@
-## OpenStack automation script execution with images
+## OpenStack automation execution with images
 
 **Network topology before starting the code:**
 
@@ -6,49 +6,49 @@
 
 **Creation of network (based on NSOT):**
 
-neutron net-create <network_name> -f json
+_neutron net-create <network_name> -f json_
 
 **Creation of subnet for the network:**
 
-neutron subnet-create --name <subnet_name> <network_name> <subnet [192.168.10.0/24]> -f json"
+_neutron subnet-create --name <subnet_name> <network_name> <subnet [192.168.10.0/24]> -f json"_
 
 ![Networks](../../Images/networks.JPG)
 
 **Creation of VMs:**
 
-nova boot --flavor m1.tiny --image <vm_image_name> --min-count <vm_count> --nic net-id=<Netowrk_Id> <VM_Initial_Names>
+_nova boot --flavor m1.tiny --image <vm_image_name> --min-count <vm_count> --nic net-id=<Netowrk_Id> <VM_Initial_Names>_
 
 ![VM_Instances](../../Images/vm_instances.JPG)
 
 **Creation of router (for inter and intra-communication):**
 
-neutron router-create <router_name> -f json
+_neutron router-create <router_name> -f json_
 
 **Setting the default gateway for router (for internet connection):**
 
-neutron router-gateway-set <router_name> public
+_neutron router-gateway-set <router_name> public_
 
 ![Router](../../Images/router.JPG)
 
 **Attaching the created subnet with the router:**
 
-neutron router-interface-add <router_id> <subnet_name>
+_neutron router-interface-add <router_id> <subnet_name>_
 
 Creation of floating IP (based on number of VM created in point c):
 
-neutron floatingip-create public -f json
+_neutron floatingip-create public -f json_
 
 **Find the VM port created and associate them with the floating IPs:**
 
-neutron floatingip-associate <floating_ip_id> <vm_port_id>
+_neutron floatingip-associate <floating_ip_id> <vm_port_id>_
 
 ![Floating_IPs](../../Images/floating_ips.JPG)
 
 **Creation of security rule:**
 
-ICMP: openstack security group rule create --protocol icmp <default_security_group_id> -f json
+ICMP: _openstack security group rule create --protocol icmp <default_security_group_id> -f json_
 
-SSH: openstack security group rule create --protocol tcp --dst-port 22:22 <default_security_group_id> -f json
+SSH: _openstack security group rule create --protocol tcp --dst-port 22:22 <default_security_group_id> -f json_
 
 ![Floating_IPs](../../Images/security_groups.JPG)
 
