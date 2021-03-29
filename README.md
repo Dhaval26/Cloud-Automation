@@ -15,51 +15,10 @@ The application created as part of this project is performing following automati
 
 Application takes the NSOT file as its input and use the neutron and openstack CLI commands (using python subprocess library) to create the necessary networks/VMs/routers/floating IPs/security groups in the project. 
 
-Script execution with the commands is shown here: ![Openstack-Automation-Execution](Script-Execution/OpenStack-Automation/README.md)
+Script execution with the commands is shown here: [Openstack-Automation-Execution](Script-Execution/OpenStack-Automation/README.md)
  
-  2) Use the neutron CLI commands (through python subprocess libarary) to perform:
-  
-     a) Creation of network: 
-        
-        neutron net-create <network_name> -f json
-     
-     b) Creation of subnet for the network:
-     
-        neutron subnet-create --name <subnet_name> <network_name> <subnet [192.168.10.0/24]> -f json"
-     
-     c) Creation of VMs:
-     
-        nova boot --flavor m1.tiny --image <vm_image_name> --min-count <vm_count> --nic net-id=<Netowrk_Id> <VM_Initial_Names>
-     
-     d) Creation of router (for inter and intra-communication):
-     
-        neutron router-create <router_name> -f json
-     
-     e) Setting the default gateway for router (for internet connection):
-     
-        neutron router-gateway-set <router_name> public
-     
-     f) Attaching the created subnet in point b with the router created in point d:
-     
-        neutron router-interface-add <router_id> <subnet_name>
-     
-     g) Creation of floating IP (based on number of VM created in point c):
-     
-        neutron floatingip-create public -f json
-     
-     h) Find the VM port created in point c and associate them with the floating IPs created in point g:
-     
-        neutron floatingip-associate <floating_ip_id> <vm_port_id>
-     
-     i) Creation of security rule:
-     
-        ICMP: openstack security group rule create --protocol icmp <default_security_group_id> -f json
-        
-        SSH:  openstack security group rule create --protocol tcp --dst-port 22:22 <default_security_group_id> -f json
-    
-     **Note: "-f json" option is used in most commands for easily parsing the data**
-     
-### Docker BGP Automation
+ 
+ ### Docker BGP Automation
 
    4)	Automate spinning up and configuring a Quagga/FRR BGP router as a Docker container.
       a)	Automate its BGP configuration to peer with the SDN controller in the next objective.
