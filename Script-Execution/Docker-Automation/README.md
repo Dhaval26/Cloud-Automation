@@ -18,17 +18,17 @@ Similarly generate new python file for Ryu controller based on [bgp_conf.j2](../
 
 **Attach the configuration file while running the docker**
 
-Frrouting docker:
+**Frrouting docker:**
 
 _docker run -v /home/frr.conf:/etc/frr/frr.conf -itd --privileged --name <frr_docker_name> <frr_image_file>_
 
-Ryu docker:
+**Ryu docker:**
 
 _docker run -tid -v /home/ssh.py:/root/ryu/ryu/services/protocols/bgp/operator/ssh.py
 -v /home/app.py:/root/ryu/ryu/services/protocols/bgp/application.py
 -v /home/bgp_conf.py:/root/ryu/ryu/services/protocols/bgp/bgp_conf.py --name <ryu_docker_name> <ryu_image_file>_
 
-Notes:
+**Notes:**
 
 In Docker container, the bgpd option needs to be enabled in /etc/frr/daemons file (line#17). After that, commit the docker container and create new image and use that image while attaching thr frr.conf file to new frr docker instance. (bgpd process requires stop/start of docker container)
 
