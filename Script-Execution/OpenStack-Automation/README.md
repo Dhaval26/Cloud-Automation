@@ -34,6 +34,8 @@ _neutron router-gateway-set <router_name> public_
 
 _neutron router-interface-add <router_id> <subnet_name>_
 
+![nw_topo_after](../../Images/nw_topology_after.JPG)
+
 Creation of floating IP (based on number of VM created in point c):
 
 _neutron floatingip-create public -f json_
