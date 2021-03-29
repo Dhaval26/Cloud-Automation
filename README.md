@@ -12,7 +12,10 @@ The application created as part of this project is performing following automati
   3)  Automate the security groups and port security configuration to make intra-VN and inter-VN communication possible.
 
 #### High-level Overview:
-  1) Application takes the NSOT file as its input
+
+Application takes the NSOT file as its input and use the neutron and openstack CLI commands (using python subprocess library) to create the necessary networks/VMs/routers/floating IPs/security groups in the project. 
+
+Script execution with the commands is shown here: ![Openstack-Automation-Execution](Script-Execution/OpenStack-Automation/READme.md)
  
   2) Use the neutron CLI commands (through python subprocess libarary) to perform:
   
