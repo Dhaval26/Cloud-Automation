@@ -15,7 +15,7 @@ The application created as part of this project is performing following automati
 
 Application takes the NSOT file as its input and use the neutron and openstack CLI commands (using python subprocess library) to create the necessary networks/VMs/routers/floating IPs/security groups in the project. 
 
-Script execution with the commands is shown here: ![Openstack-Automation-Execution](Script-Execution/OpenStack-Automation/READme.md)
+Script execution with the commands is shown here: ![Openstack-Automation-Execution](Script-Execution/OpenStack-Automation/README.md)
  
   2) Use the neutron CLI commands (through python subprocess libarary) to perform:
   
